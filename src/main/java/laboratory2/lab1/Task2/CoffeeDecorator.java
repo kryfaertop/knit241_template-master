@@ -7,6 +7,10 @@ abstract class CoffeeDecorator implements Coffee {
         this.coffee = coffee;
     }
 
+    public String toString() {
+        return this.getDescription() + " | Цена: $" + this.getCost() + " | Калорийность: " + this.getCalories() + " ккал";
+    }
+
     @Override
     public double getCost() {
         return coffee.getCost();

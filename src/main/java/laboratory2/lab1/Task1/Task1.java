@@ -1,8 +1,12 @@
 package laboratory2.lab1.Task1;
 
 
-public class Task1 {
-    public static void main(String[] args) {
+import laboratory2.TaskDescription;
+
+@TaskDescription(name = "Chain of Responsibility", description = "Этот паттерн используется для передачи запроса по цепочке обработчиков, пока один из них не обработает его. Каждый обработчик в цепочке может либо обработать запрос, либо передать его дальше.")
+public class Task1  {
+
+    public void execute(){
         // Создаем обработчиков
         Approver call_center = new Сall_center();
         Approver manager = new Manager();
@@ -14,8 +18,6 @@ public class Task1 {
         manager.setNextApprover(legal_department);
         legal_department.setNextApprover(director);
 
-        // Запросы на одобрение разных сумм
-        // Превышает лимит – запрос отклонен
 
         Problem problem1 = new Problem("Хочу кредит", 46);
         Problem problem2 = new Problem("Хочу кредит больше", 129);
@@ -23,12 +25,11 @@ public class Task1 {
         Problem problem4 = new Problem("Хочу кредит ещё ещё больше", 707);
         Problem problem5 = new Problem("Хочу кредит ещё ещё ещё больше", 10000);
 
-        call_center.processRequest(problem1);   // Младший менеджер одобряет
-        call_center.processRequest(problem2);  // Старший менеджер одобряет
-        call_center.processRequest(problem3); // Директор одобряет
+        call_center.processRequest(problem1);
+        call_center.processRequest(problem2);
+        call_center.processRequest(problem3);
         call_center.processRequest(problem4);
         call_center.processRequest(problem5);
     }
-
 }
 

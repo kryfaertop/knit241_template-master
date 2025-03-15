@@ -3,7 +3,7 @@ package laboratory2.lab1.Task1;
 class Legal_department extends Approver {
     @Override
     protected boolean canApprove(Problem amount) {
-        return amount.getIndex() <= 500; // Директор одобряет до 50,000
+        return amount.getIndex() <= 500;
     }
 
     @Override

@@ -1,7 +1,7 @@
 package laboratory2.lab1.Task1;
 
 abstract class Approver {
-    protected Approver nextApprover; // Следующий обработчик в цепочке
+    protected Approver nextApprover;
 
     public void setNextApprover(Approver nextApprover) {
         this.nextApprover = nextApprover;
@@ -17,7 +17,7 @@ abstract class Approver {
         }
     }
 
-    protected abstract boolean canApprove(Problem amount); // Проверка лимита
+    protected abstract boolean canApprove(Problem amount);
 
-    protected abstract void approve(Problem amount); // Логика одобрения
+    protected abstract void approve(Problem amount);
 }
